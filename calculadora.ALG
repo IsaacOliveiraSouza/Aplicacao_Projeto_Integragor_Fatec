@@ -1,7 +1,7 @@
 Algoritmo "semnome"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
 // Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
+// DescriÃ§Ã£o   : Aqui vocÃª descreve o que o programa faz! (funÃ§Ã£o)
 // Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 23/09/2024
 Var
@@ -11,11 +11,11 @@ Var
 
 procedimento lerOperacoesBasicas()
 inicio
-escreval("Digite o primeiro número: ")
+escreval("Digite o primeiro nÃºmero: ")
       Leia(num1)
 
 
-   Escreva("Digite o segundo número: ")
+   Escreva("Digite o segundo nÃºmero: ")
    Leia(num2)
 Fimprocedimento
 
@@ -25,19 +25,29 @@ Inicio
    resultado <- num1 + num2
    escreval ("Resultado: ",num1," + ",num2," = ", resultado)
 Fimprocedimento
+// SubtraÃ§Ã£o
+procedimento subtrair()
+Inicio
+   resultado <- num1 - num2
+   escreval ("Resultado: ",num1," - ",num2," = ", resultado)
+Fimprocedimento
 
-// Chamada da operação
+// Chamada da operaÃ§Ã£o
 Inicio
    operacao <- 1
    enquanto operacao <> 0 faca
-      Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SAIR (0)")
+      Escreval ("Digite a operaÃ§Ã£o que deseja dentre as listadas abaixo: ")
+      Escreval ("SOMA (01) | SUBTRAÃ‡ÃƒO (02) | SAIR (0)")
       leia(operacao)
 
-      se (operacao = 1) entao
+se (operacao = 1) entao
          lerOperacoesBasicas()
          somar()
+      senao
+      se (operacao = 2) entao
+            lerOperacoesBasicas()
+            subtrair()
       fimse
-
+fimse
    fimenquanto
 Fimalgoritmo
