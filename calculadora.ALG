@@ -1,4 +1,4 @@
-Algoritmo "semnome"
+Algoritmo "calculadora_cientifica"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
 // Descrição   : Aqui você descreve o que o programa faz! (função)
@@ -31,23 +31,32 @@ Inicio
    resultado <- num1 - num2
    escreval ("Resultado: ",num1," - ",num2," = ", resultado)
 Fimprocedimento
-
+// Multiplicação
+procedimento multiplicar()
+Inicio
+   resultado <- num1 * num2
+   escreval ("Resultado: ",num1," x ",num2," = ", resultado)
+Fimprocedimento
 // Chamada da operação
 Inicio
    operacao <- 1
    enquanto operacao <> 0 faca
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | SAIR (0)")
+      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | SAIR (0)")
       leia(operacao)
-
-se (operacao = 1) entao
+      se (operacao = 1) entao
          lerOperacoesBasicas()
          somar()
       senao
-      se (operacao = 2) entao
+         se (operacao = 2) entao
             lerOperacoesBasicas()
             subtrair()
+         senao
+            se (operacao = 3) entao
+               lerOperacoesBasicas()
+               multiplicar()
+            fimse
+         fimse
       fimse
-fimse
    fimenquanto
 Fimalgoritmo
