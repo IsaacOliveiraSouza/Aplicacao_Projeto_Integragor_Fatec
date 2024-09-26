@@ -1,4 +1,4 @@
-Algoritmo "calculadora_cientifica"
+Algoritmo "semnome"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
 // Descrição   : Aqui você descreve o que o programa faz! (função)
@@ -37,6 +37,16 @@ Inicio
    resultado <- num1 * num2
    escreval ("Resultado: ",num1," x ",num2," = ", resultado)
 Fimprocedimento
+// Divisão
+procedimento dividir()
+Inicio
+   se num2 = 0 entao
+      escreval ("Não é possível divisão por 0! Tente novamente.")
+   senao
+      resultado <- num1 / num2
+      escreval ("Resultado: ",num1," / ",num2," = ", resultado)
+   fimse
+Fimprocedimento
 // Chamada da operação
 Inicio
    operacao <- 1
@@ -44,7 +54,7 @@ Inicio
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
       Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | SAIR (0)")
       leia(operacao)
-      se (operacao = 1) entao
+se (operacao = 1) entao
          lerOperacoesBasicas()
          somar()
       senao
@@ -55,6 +65,11 @@ Inicio
             se (operacao = 3) entao
                lerOperacoesBasicas()
                multiplicar()
+            senao
+               se (operacao = 4) entao
+                  lerOperacoesBasicas()
+                  dividir()
+               fimse
             fimse
          fimse
       fimse
