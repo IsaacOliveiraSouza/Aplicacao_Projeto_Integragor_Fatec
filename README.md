@@ -20,11 +20,6 @@ Repositório para o projeto da API do primeiro semestre.
       <td style="border: 1px solid #ddd; padding: 8px;">Alta</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">Múltiplas Operações</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Opção para realizar múltiplas operações ou finalizar via menu</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
-    </tr>
-    <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Operações Básicas</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementar operações: <br>
           - Soma <br>
@@ -33,6 +28,11 @@ Repositório para o projeto da API do primeiro semestre.
           - Divisão
       </td>
       <td style="border: 1px solid #ddd; padding: 8px;">Alta</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Múltiplas Operações</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Opção para realizar múltiplas operações ou finalizar via menu</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Cálculo Fatorial</td>
@@ -58,11 +58,6 @@ Repositório para o projeto da API do primeiro semestre.
       <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">Concatenação de Strings</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Implementar concatenação de duas strings</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Baixa</td>
-    </tr>
-    <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Juros Simples</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementar cálculo de Juros Simples</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
@@ -71,6 +66,11 @@ Repositório para o projeto da API do primeiro semestre.
       <td style="border: 1px solid #ddd; padding: 8px;">Juros Compostos</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementar cálculo de Juros Compostos</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Concatenação de Strings</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Implementar concatenação de duas strings</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Baixa</td>
     </tr>
   </tbody>
 </table>
