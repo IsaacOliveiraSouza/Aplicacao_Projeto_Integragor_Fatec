@@ -1,7 +1,11 @@
 # Aplicacao_Projeto_Integrador_Fatec
 Repositório para o projeto da API do primeiro semestre.
 
-# Backlog de Requisitos
+# Descrição
+
+Este backlog estabelece uma visão clara das funcionalidades desejadas para o projeto da API, priorizando as operações matemáticas mais essenciais. A implementação em VisualG proporciona um ambiente acessível para desenvolvimento e testes, facilitando o aprendizado prático dos conceitos, no tópico de "Requisitos Funcionais" é possível verificar quais das operações poderão ser realizadas no Software
+
+# Backlog de Requisitos:
 
 ## Requisitos Funcionais
 
@@ -17,7 +21,7 @@ Repositório para o projeto da API do primeiro semestre.
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Interface de Texto</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Acessar operações matemáticas</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Alta</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Alto</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Operações Básicas</td>
@@ -27,7 +31,7 @@ Repositório para o projeto da API do primeiro semestre.
           - Subtração <br>
           - Divisão
       </td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Alta</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Alto</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Múltiplas Operações</td>
@@ -55,17 +59,17 @@ Repositório para o projeto da API do primeiro semestre.
         - Binário (B2) para Hexadecimal (B16) <br>
         - Hexadecimal (B16) para Binário (B2)
       </td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Alto</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Juros Simples</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementar cálculo de Juros Simples</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Baixo</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Juros Compostos</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementar cálculo de Juros Compostos</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Média</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Baixo</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 8px;">Concatenação de Strings</td>
@@ -82,14 +86,12 @@ Repositório para o projeto da API do primeiro semestre.
     <tr>
       <th style="border: 1px solid #ddd; padding: 8px; text-align:left; background-color:#f2f2f2;">Tópico</th>
       <th style="border: 1px solid #ddd; padding: 8px; text-align:left; background-color:#f2f2f2;">Requisitos</th>
-      <th style="border: 1px solid #ddd; padding: 8px; text-align:left; background-color:#f2f2f2;">Prioridade</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">Implementação</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Técnologia Utilizada</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Implementação em VisualG (Portugol)</td>
-      <td style="border: 1px solid #ddd; padding: 8px;">Alta</td>
     </tr>
   </tbody>
 </table>
