@@ -19,6 +19,17 @@ inicio
       Leia(num2)
 Fimprocedimento
 
+procedimento lerOperacaoFatorial()
+inicio
+
+   // Solicitação do número para cálculo do Fatorial
+     Escreval("Digite um número: ")
+     Leia(NumeroFatorial)
+     //Inicialização do fatorial pois não pode ser 0
+     Fatorial <- 1
+     GuardaNumero_Fatorial <- NumeroFatorial
+FimProcedimento
+
 //soma
 Procedimento somar()
 Inicio
@@ -63,18 +74,15 @@ Fimprocedimento
 
 //Fatorial
 procedimento calculo_Fatorial()
-// Solicitação do número para cálculo do Fatorial
-     Escreval("Digite um número: ")
-     Leia(NumeroFatorial)
-     //Inicialização do fatorial pois não pode ser 0
-     Fatorial <- 1
-     GuardaNumero_Fatorial <- NumeroFatorial
+inicio
      // Calculo do Fatorial
+     limpatela
      Repita
         Fatorial <- Fatorial * NumeroFatorial
         NumeroFatorial <- NumeroFatorial - 1
      Ate(NumeroFatorial < 1)
      Escreval("Resultado: ", GuardaNumero_Fatorial,"! = " ,Fatorial)
+     Escreval("")
 
 FimProcedimento
 
@@ -110,6 +118,7 @@ enquanto operacao <> 0 faca
                  dividir()
              senao
                   se(operacao = 5) entao
+                  lerOperacaoFatorial()
                      calculo_fatorial()
                   fimse
             fimse
