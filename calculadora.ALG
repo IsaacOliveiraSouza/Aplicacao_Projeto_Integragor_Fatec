@@ -1,13 +1,11 @@
 Algoritmo "Operações Basicas"
-//  
-//  
 // Disciplina   : [Algoritmos]
 // Professor   : Sabha
 // Data atual  : 17/09/2024
 Var
 
-   num1, num2, resultado : real
-   operacao: inteiro
+   num1, num2, resultado,GuardaNumero_Fatorial, Fatorial : real
+   operacao, NumeroFatorial: inteiro
    outraOperacao : caractere
 
 procedimento lerOperacoesBasicas()
@@ -63,6 +61,23 @@ Inicio
    fimse
 Fimprocedimento
 
+//Fatorial
+procedimento calculo_Fatorial()
+// Solicita��o do n�mero para c�lculo do Fatorial
+     Escreval("Digite um n�mero: ")
+     Leia(NumeroFatorial)
+     //Inicializa��o do fatorial pois n�o pode ser 0
+     Fatorial <- 1
+     GuardaNumero_Fatorial <- NumeroFatorial
+     // Calculo do Fatorial
+     Repita
+        Fatorial <- Fatorial * NumeroFatorial
+        NumeroFatorial <- NumeroFatorial - 1
+     Ate(NumeroFatorial < 1)
+     Escreval("Resultado: ", GuardaNumero_Fatorial,"! = " ,Fatorial)
+
+FimProcedimento
+
 Inicio
 
 operacao <- 1
@@ -72,10 +87,10 @@ enquanto operacao <> 0 faca
    Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | SAIR (0)")
    leia(operacao)
    //validação-operação válida
-   enquanto ((operacao <0) ou (operacao > 4)) faca
+   enquanto ((operacao <0) ou (operacao > 5)) faca
       escreval ("Operação inválida! Tente novamente.")
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | SAIR (0)")
+      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04)| FATORIAL (05)| SAIR (0)")
       leia (operacao)
    fimenquanto
    se (operacao = 1) entao
@@ -93,6 +108,10 @@ enquanto operacao <> 0 faca
              se(operacao = 4) entao
                  lerOperacoesBasicas()
                  dividir()
+             senao
+                  se(operacao = 5) entao
+                     calculo_fatorial()
+                  fimse
             fimse
          fimse
       fimse
