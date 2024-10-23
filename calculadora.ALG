@@ -92,7 +92,7 @@ operacao <- 1
 //chamada-operações
 enquanto operacao <> 0 faca
    Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | SAIR (0)")
+   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | SAIR (0)")
    leia(operacao)
    //validação-operação válida
    enquanto ((operacao <0) ou (operacao > 5)) faca
