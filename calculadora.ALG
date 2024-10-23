@@ -5,7 +5,7 @@ Algoritmo "OperaÃ§Ãµes Basicas"
 Var
 
    num1, num2, resultado,GuardaNumero_Fatorial, Fatorial : real
-   operacao, NumeroFatorial: inteiro
+   operacao: inteiro
    outraOperacao : caractere
 
 procedimento lerOperacoesBasicas()
@@ -18,17 +18,6 @@ inicio
       Escreva("Digite o segundo nÃºmero: ")
       Leia(num2)
 Fimprocedimento
-
-procedimento lerOperacaoFatorial()
-inicio
-
-   // Solicitação do número para cálculo do Fatorial
-     Escreval("Digite um número: ")
-     Leia(NumeroFatorial)
-     //Inicialização do fatorial pois não pode ser 0
-     Fatorial <- 1
-     GuardaNumero_Fatorial <- NumeroFatorial
-FimProcedimento
 
 //soma
 Procedimento somar()
@@ -75,12 +64,18 @@ Fimprocedimento
 //Fatorial
 procedimento calculo_Fatorial()
 inicio
+     // Solicitando o número para o Fatorial
+     Escreval("Digite um n?ero: ")
+     Leia(num1)
+     //Inicializando do fatorial pois não pode ser 0
+     Fatorial <- 1
+     GuardaNumero_Fatorial <- num1
      // Calculo do Fatorial
      limpatela
      Repita
-        Fatorial <- Fatorial * NumeroFatorial
-        NumeroFatorial <- NumeroFatorial - 1
-     Ate(NumeroFatorial < 1)
+        Fatorial <- Fatorial * num1
+        num1 <- num1 - 1
+     Ate(num1 < 1)
      Escreval("Resultado: ", GuardaNumero_Fatorial,"! = " ,Fatorial)
      Escreval("")
 
@@ -118,7 +113,6 @@ enquanto operacao <> 0 faca
                  dividir()
              senao
                   se(operacao = 5) entao
-                  lerOperacaoFatorial()
                      calculo_fatorial()
                   fimse
             fimse
