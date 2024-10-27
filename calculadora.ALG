@@ -64,10 +64,10 @@ Fimprocedimento
 //Fatorial
 procedimento calculo_Fatorial()
 inicio
-     // Solicitando o n�mero para o Fatorial
+     // Solicitando o n�mero para o Fatorial
      Escreval("Digite um n?ero: ")
      Leia(num1)
-     //Inicializando do fatorial pois n�o pode ser 0
+     //Inicializando do fatorial pois n�o pode ser 0
      Fatorial <- 1
      GuardaNumero_Fatorial <- num1
      // Calculo do Fatorial
@@ -81,19 +81,45 @@ inicio
 
 FimProcedimento
 
+//Juros Simples
+procedimento jurosSimples()
+var
+//Declarando variáveis locais para uso do procedimento
+   capitalInicial, taxaJuros, periodicidade, juros: real
+   
+inicio
+
+//Solicitando valor do capital inicial
+escreval ("DIGITE O VALOR DO CAPITAL (c): ")
+      leia (capitalInicial)
+      
+      //Solicitando valor da taxa de juros
+      escreval ("DIGITE O VALOR DA TAXA DE JUROS (i): ")
+      leia (taxaJuros)
+      taxaJuros <- taxaJuros/100
+      
+      //Solicitando o periodo
+      escreval ("DIGITE A PERIODICIDADE (t): ")
+      leia (periodicidade)
+      escreval ()
+
+            juros <- capitalInicial * taxaJuros * periodicidade
+      escreval("O VALOR DO JUROS SIMPLES É: ", juros)
+fimprocedimento
+
 Inicio
 
 operacao <- 1
 //chamada-operações
 enquanto operacao <> 0 faca
    Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | SAIR (0)")
+   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) |   JUROS SIMPLES (06) | SAIR (0)")
    leia(operacao)
    //validação-operação válida
-   enquanto ((operacao <0) ou (operacao > 5)) faca
+   enquanto ((operacao <0) ou (operacao > 6)) faca
       escreval ("Operação inválida! Tente novamente.")
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04)| FATORIAL (05)| SAIR (0)")
+      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04)| FATORIAL (05)| JUROS SIMPLES (06) | SAIR (0)")
       leia (operacao)
    fimenquanto
    se (operacao = 1) entao
@@ -114,6 +140,10 @@ enquanto operacao <> 0 faca
              senao
                   se(operacao = 5) entao
                      calculo_fatorial()
+                        senao
+                           se(operacao = 6) entao
+                              jurosSimples()
+                           fimse
                   fimse
             fimse
          fimse
