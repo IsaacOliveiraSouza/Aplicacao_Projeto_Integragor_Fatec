@@ -5,6 +5,14 @@ Repositório para o projeto da API do primeiro semestre.
 
 Este backlog estabelece uma visão clara das funcionalidades desejadas para o projeto da API, priorizando as operações matemáticas mais essenciais. A implementação em VisualG proporciona um ambiente acessível para desenvolvimento e testes, facilitando o aprendizado prático dos conceitos, no tópico de "Requisitos Funcionais" é possível verificar quais das operações poderão ser realizadas no Software
 
+# Membros do The Buggers:
+
+![Organograma](https://github.com/user-attachments/assets/d7b27813-6857-4158-8ae5-dab00c945f0f)
+
+# Sprint Review 1, 2 e 3.
+
+![Cream Pastel Sprint Retrospective Ideas Template (1)](https://github.com/user-attachments/assets/6f4dbfc0-5d53-4dc2-b68f-5525cea864de)
+
 # Backlog de Requisitos:
 
 ## Requisitos Funcionais
