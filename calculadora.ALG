@@ -6,7 +6,7 @@ Var
 
    num1, num2, resultado,GuardaNumero_Fatorial, Fatorial : real
    operacao: inteiro
-   outraOperacao : caractere
+   outraOperacao, primeiraString, segundaString, stringCompleta : caractere
 
 procedimento lerOperacoesBasicas()
 inicio
@@ -64,10 +64,10 @@ Fimprocedimento
 //Fatorial
 procedimento calculo_Fatorial()
 inicio
-     // Solicitando o n�mero para o Fatorial
-     Escreval("Digite um n�mero: ")
+     // Solicitando o n?mero para o Fatorial
+     Escreval("Digite um n?mero: ")
      Leia(num1)
-     //Inicializando do fatorial pois n�o pode ser 0
+     //Inicializando do fatorial pois n?o pode ser 0
      Fatorial <- 1
      GuardaNumero_Fatorial <- num1
      // Calculo do Fatorial
@@ -86,25 +86,49 @@ procedimento jurosSimples()
 var
 //Declarando variáveis locais para uso do procedimento
    capitalInicial, taxaJuros, periodicidade, juros: real
-   
+
 inicio
 
 //Solicitando valor do capital inicial
 escreval ("DIGITE O VALOR DO CAPITAL (c): ")
       leia (capitalInicial)
-      
+
       //Solicitando valor da taxa de juros
       escreval ("DIGITE O VALOR DA TAXA DE JUROS (i): ")
       leia (taxaJuros)
       taxaJuros <- taxaJuros/100
-      
+
       //Solicitando o periodo
       escreval ("DIGITE A PERIODICIDADE (t): ")
       leia (periodicidade)
       escreval ()
-
+               limpatela
             juros <- capitalInicial * taxaJuros * periodicidade
       escreval("O VALOR DO JUROS SIMPLES É: ", juros)
+fimprocedimento
+
+procedimento concatenacaoString()
+inicio
+// Leitura da primeira e segunda strings
+   primeiraString <- ("")
+   segundaString <- ("")
+   enquanto (primeiraString = "") ou (segundaString = "") faca
+      escreval("Digite a primeira parte: ")
+      leia(primeiraString)
+
+      escreval("Digite a segunda parte: ")
+      leia(segundaString)
+
+      // Verificação e mensagem de erro se uma das strings estiver vazia
+      se (primeiraString = "") ou (segundaString = "") entao
+         limpatela
+         escreval("Erro: Certifique-se de que ambas as partes foram digitadas.")
+      fimse
+   fimenquanto
+   limpatela
+   // Concatenação das strings
+   stringCompleta <- primeiraString + segundaString
+   escreval("O resultado foi: ", stringCompleta)
 fimprocedimento
 
 Inicio
@@ -113,43 +137,48 @@ operacao <- 1
 //chamada-operações
 enquanto operacao <> 0 faca
    Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) |   JUROS SIMPLES (06) | SAIR (0)")
+   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | CONCATENAÇÃO DE PALAVRAS (07) | SAIR (0)")
    leia(operacao)
    //validação-operação válida
-   enquanto ((operacao <0) ou (operacao > 6)) faca
+   enquanto ((operacao <0) ou (operacao > 7)) faca
       escreval ("Operação inválida! Tente novamente.")
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04)| FATORIAL (05)| JUROS SIMPLES (06) | SAIR (0)")
+      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | CONCATENAÇÃO DE PALAVRAS (07) | SAIR (0)")
       leia (operacao)
    fimenquanto
-   se (operacao = 1) entao
+se (operacao = 1) entao
+   lerOperacoesBasicas()
+   somar()
+senao
+   se (operacao = 2) entao
       lerOperacoesBasicas()
-      somar()
+      subtrair()
    senao
-      se (operacao = 2) entao
+      se (operacao = 3) entao
          lerOperacoesBasicas()
-         subtrair()
+         multiplicar()
       senao
-         se (operacao = 3) entao
+         se (operacao = 4) entao
             lerOperacoesBasicas()
-            multiplicar()
+            dividir()
          senao
-             se(operacao = 4) entao
-                 lerOperacoesBasicas()
-                 dividir()
-             senao
-                  se(operacao = 5) entao
-                     calculo_fatorial()
-                        senao
-                           se(operacao = 6) entao
-                              jurosSimples()
-                           fimse
+            se (operacao = 5) entao
+               calculo_fatorial()
+            senao
+               se (operacao = 6) entao
+                  jurosSimples()
+               senao
+                  se (operacao = 7) entao
+                     concatenacaoString()
                   fimse
+               fimse
             fimse
          fimse
       fimse
    fimse
+fimse
 
-   
+
+
 fimenquanto
 Fimalgoritmo
