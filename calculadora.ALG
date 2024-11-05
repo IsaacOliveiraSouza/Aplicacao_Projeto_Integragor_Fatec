@@ -64,10 +64,10 @@ Fimprocedimento
 //Fatorial
 procedimento calculo_Fatorial()
 inicio
-     // Solicitando o nï¿½mero para o Fatorial
-     Escreval("Digite um n?ero: ")
+     // Solicitando o número para o Fatorial
+     Escreval("Digite um número: ")
      Leia(num1)
-     //Inicializando do fatorial pois nï¿½o pode ser 0
+     //Inicializando do fatorial pois não pode ser 0
      Fatorial <- 1
      GuardaNumero_Fatorial <- num1
      // Calculo do Fatorial
