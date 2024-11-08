@@ -106,6 +106,39 @@ escreval ("DIGITE O VALOR DO CAPITAL (c): ")
       escreval("O VALOR DO JUROS SIMPLES É: ", juros)
 fimprocedimento
 
+//Procedimento Juros Composto
+procedimento jurosComposto()
+var
+   capitalInicial, taxaJuros, montante: real
+   i, periodicidade: inteiro
+
+inicio
+limpatela
+     escreval ("DIGITE O VALOR DO CAPITAL (c): ")
+     leia (capitalInicial)
+
+     // Solicitação da taxa de juros
+     escreval ("DIGITE O VALOR DA TAXA DE JUROS (i): ")
+     leia (taxaJuros)
+     taxaJuros <- taxaJuros / 100
+
+     // Solicitação do período
+     escreval ("DIGITE A PERIODICIDADE (t): ")
+     leia (periodicidade)
+
+     // Inicializa o montante com o valor do capital inicial
+     montante <- capitalInicial
+
+     // Aplica juros compostos
+     para i <- 1 ate periodicidade faca
+           montante <- montante * (1 + taxaJuros)
+     fimpara
+
+     escreval()
+     escreval("VALOR DO MONTANTE: ", montante:10:2)
+fimprocedimento
+
+
 procedimento equacao()
 var 
 a, b, c, delta, x1, x2: real
@@ -174,13 +207,13 @@ operacao <- 1
 //chamada-operações
 enquanto operacao <> 0 faca
    Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | CONCATENAÇÃO DE PALAVRAS (07) | EQUACAO (08) | SAIR (0)")
+   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | JUROS COMPOSTO (07) | CONCATENAÇÃO DE PALAVRAS (08) | EQUACAO (09) | SAIR (0)")
    leia(operacao)
    //validação-operação válida
    enquanto ((operacao <0) ou (operacao > 8)) faca
       escreval ("Operação inválida! Tente novamente.")
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | CONCATENAÇÃO DE PALAVRAS (07) | EQUACAO (08) | SAIR (0)")
+      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | JUROS COMPOSTO (07) | CONCATENAÇÃO DE PALAVRAS (08) | EQUACAO (09) | SAIR (0)")
       leia (operacao)
    fimenquanto
 se (operacao = 1) entao
@@ -206,10 +239,14 @@ senao
                   jurosSimples()
                senao
                   se (operacao = 7) entao
-                     concatenacaoString()
+                     jurosComposto()
                   senao
                      se (operacao = 8) entao
-                        equacao()
+                        concatenacaoString()
+                     senao
+                        se (operacao = 9) entao
+                           equacao()
+                        fimse
                      fimse
                   fimse
                fimse
