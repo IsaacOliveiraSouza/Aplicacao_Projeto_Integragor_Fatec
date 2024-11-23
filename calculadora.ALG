@@ -138,7 +138,7 @@ fimprocedimento
 
 procedimento equacao()
 var
-a, b, c, delta, x1, x2: real
+a, b, c, delta, x1, x2, raiz: real
 inicio
     escreval("Digite o valor de a: ")
    leia(a)
@@ -154,9 +154,10 @@ inicio
       escreval("O valor de 'a' não pode ser zero. Não é uma equação do segundo grau.")
    senão
       se delta > 0 então
+      raiz <- RaizQuad(delta)
          // Duas raízes reais distintas
-         x1 := (-b + raizq(delta)) / (2 * a)
-         x2 := (-b - raizq(delta)) / (2 * a)
+         x1 := (-b + raiz) / (2 * a)
+         x2 := (-b - raiz) / (2 * a)
          limpatela()
          escreval("As raízes reais são: X1 = ", x1, " e X2 = ", x2)
       senao
@@ -193,6 +194,7 @@ inicio
       fimse
    fimenquanto
    limpatela
+   limpatela
    // Concatenação das strings
    stringCompleta <- primeiraString + segundaString
    escreval("O resultado foi: ", stringCompleta)
@@ -212,6 +214,7 @@ procedimento converte_decimal_para_binario()
          decimal <- decimal / 2
          i <- i + 1
       fimEnquanto
+      limpatela
       escreva("Número em binário: ")
       j <- i - 1
       para i de j até 1 passo -1 faça
@@ -240,7 +243,7 @@ procedimento converte_binario_para_decimal()
         // Incrementa o expoente
         expoente <- expoente + 1
     fimenquanto
-
+              limpatela
     // Exibe o número convertido
     escreval("O número binário em decimal é: ", decimal)
    fimprocedimento
@@ -276,7 +279,7 @@ procedimento converte_binario_para_octal()
         decimal <- decimal / 8
         expoente <- expoente + 1
     fimenquanto
-
+                    limpatela
     // Exibe o número convertido
     escreval("O número binário em octal é: ", octal)
    fimprocedimento
@@ -309,7 +312,7 @@ procedimento converte_octal_para_binario()
         decimal <- decimal / 2
         expoente <- expoente + 1
     fimenquanto
-
+                     limpatela
     // Exibe o número convertido
     escreval("O número octal em binário é: ", binario)
    fimprocedimento
@@ -361,7 +364,7 @@ procedimento converte_binario_para_hexadecimal()
         decimal <- decimal / 16 // Atualiza decimal usando divisão inteira
         indice <- indice + 1
     fimenquanto
-
+                   limpatela
     // Exibe o número convertido em ordem inversa
     escreva("O número binário em hexadecimal é: ")
     indice <- indice - 1
@@ -374,76 +377,68 @@ procedimento converte_binario_para_hexadecimal()
 
 procedimento converte_hexadecimal_para_binario()
    var
-      hexadecimal: caractere
-      binario: vetor[1..80] de caractere // Vetor para armazenar o número binário temporariamente
-      digitos_hex: vetor[0..15] de caractere
-      binario_digito: vetor[0..15] de caractere
-      digito_hex, i, j, indice, tamanho: inteiro
+      hexadecimal, binarioString, parteHexadec: caractere
+
+      digito_hex, index, j, indice, tamanho, numDigitos: inteiro
    inicio
-    escreva("Digite o número hexadecimal: ")
-    leia(hexadecimal)
+     escreva("Digite um numero Hexadecimal:")
+               leia(hexadecimal)
+               binarioString <- ""
+               numDigitos <- compr(hexadecimal)
 
-    // Inicializa o vetor de dígitos hexadecimais
-    digitos_hex[0] <- "0"
-    digitos_hex[1] <- "1"
-    digitos_hex[2] <- "2"
-    digitos_hex[3] <- "3"
-    digitos_hex[4] <- "4"
-    digitos_hex[5] <- "5"
-    digitos_hex[6] <- "6"
-    digitos_hex[7] <- "7"
-    digitos_hex[8] <- "8"
-    digitos_hex[9] <- "9"
-    digitos_hex[10] <- "A"
-    digitos_hex[11] <- "B"
-    digitos_hex[12] <- "C"
-    digitos_hex[13] <- "D"
-    digitos_hex[14] <- "E"
-    digitos_hex[15] <- "F"
+               // Loop para percorrer cada digito hexadecimal.
+               para index <- 1 ate numDigitos faca
+                  // Obtem o caractere hexadecimal atual.
+                  parteHexadec <- copia(hexadecimal, index, 1)
 
-    // Inicializa o vetor com representações binárias
-    binario_digito[0] <- "0000"
-    binario_digito[1] <- "0001"
-    binario_digito[2] <- "0010"
-    binario_digito[3] <- "0011"
-    binario_digito[4] <- "0100"
-    binario_digito[5] <- "0101"
-    binario_digito[6] <- "0110"
-    binario_digito[7] <- "0111"
-    binario_digito[8] <- "1000"
-    binario_digito[9] <- "1001"
-    binario_digito[10] <- "1010"
-    binario_digito[11] <- "1011"
-    binario_digito[12] <- "1100"
-    binario_digito[13] <- "1101"
-    binario_digito[14] <- "1110"
-    binario_digito[15] <- "1111"
+                  // Converte o caractere hexadecimal para inteiro.
+                  escolha parteHexadec
+                  caso "0"
+                     binarioString <- binarioString + "0000"
+                  caso "1"
+                     binarioString <- binarioString + "0001"
+                  caso "2"
+                     binarioString <- binarioString + "0010"
+                  caso "3"
+                     binarioString <- binarioString + "0011"
+                  caso "4"
+                     binarioString <- binarioString + "0100"
+                  caso "5"
+                     binarioString <- binarioString + "0101"
+                  caso "6"
+                     binarioString <- binarioString + "0110"
+                  caso "7"
+                     binarioString <- binarioString + "0111"
+                  caso "8"
+                     binarioString <- binarioString + "1000"
+                  caso "9"
+                     binarioString <- binarioString + "1001"
+                  fimescolha
 
-    // Obtém o tamanho do valor hexadecimal
-    tamanho <- compr(hexadecimal)
-    indice <- 1
+        se (parteHexadec = "A") ou (parteHexadec = "a") entao
+            binarioString <- binarioString + "1010"
+        fimse
+        se (parteHexadec = "B") ou (parteHexadec = "b") entao
+            binarioString <- binarioString + "1011"
+        fimse
+        se (parteHexadec = "C") ou (parteHexadec = "c") entao
+            binarioString <- binarioString + "1100"
+        fimse
+        se (parteHexadec = "D") ou (parteHexadec = "d") entao
+            binarioString <- binarioString + "1101"
+        fimse
+        se (parteHexadec = "E") ou (parteHexadec = "e") entao
+            binarioString <- binarioString + "1110"
+        fimse
+        se (parteHexadec = "F") ou (parteHexadec = "f") entao
+            binarioString <- binarioString + "1111"
+        fimse
 
-    // Converte cada caractere do hexadecimal para binário
-    para i de 1 ate tamanho faca
-        // Procura o índice correspondente do caractere hexadecimal
-        para j de 0 ate 15 faca
-            se (digitos_hex[j] = hexadecimal[i]) entao
-                digito_hex <- j
-                // Armazena a representação binária correspondente
-                para k de 1 ate 4 faca
-                    binario[indice] <- binario_digito[digito_hex][k]
-                    indice <- indice + 1
-                fimpara
-            fimse
-        fimpara
-    fimpara
+               fimpara
+               limpatela
+               // Mostra o resultado da conversao
+               escreval("O numero hexadecimal ", hexadecimal, " em binario: ", caracpnum(binarioString))
 
-    // Exibe o número convertido
-    escreva("O número hexadecimal em binário é: ")
-    para i de 1 ate indice - 1 faca
-        escreva(binario[i])
-    fimpara
-    escreval("")
    fimprocedimento
 
 
@@ -484,6 +479,32 @@ Inicio
    fimse
 Fimprocedimento
 
+
+Funcao RaizQuad (R: real):real
+var
+raiz, numRaiz, precisao, raizquadrada: real
+Inicio
+   //a precisao define a quantidade de casas decimais que a raiz sera decomposta
+   precisao <- 0.000001
+   //para calcular a raiz quadrada utilizamos o m?todo de m?dia aproimada
+   //para comecar decompomos a raiz por 2
+   raiz <- R / 2
+
+   //procedimento de decomposi??o da raiz
+   enquanto raiz > precisao faca
+      numRaiz <- (raiz + R / raiz) / 2
+      se (raiz - numRaiz) < precisao entao
+         raiz <- numRaiz
+         //assim que a raiz for decomposta ate a casa decimal definida
+         //precisao, interrompemos o processo
+         interrompa
+      fimse
+      //definimos o valor de raiz de delta!
+      raiz <- numRaiz
+      raizquadrada  <- raiz
+      Retorne raizquadrada
+   fimenquanto
+FimFuncao
 
 Inicio
 
@@ -546,5 +567,5 @@ fimse
 
 
 
-fimenquantogit add 
+fimenquanto
 Fimalgoritmo
