@@ -1,4 +1,4 @@
-Algoritmo "Operações Basicas"
+Algoritmo "CalculadoraCientifica"
 // Disciplina   : [Algoritmos]
 // Professor   : Sabha
 // Data atual  : 17/09/2024
@@ -9,10 +9,10 @@ Var
    outraOperacao, primeiraString, segundaString, stringCompleta : caractere
 procedimento lerOperacoesBasicas()
 inicio
-         escreval("Digite o primeiro número: ")
+         Escreval("Digite o primeiro número: ")
          Leia(num1)
-      Escreva("Digite o segundo número: ")
-      Leia(num2)
+         Escreva("Digite o segundo número: ")
+         Leia(num2)
 Fimprocedimento
 
 //soma
@@ -86,21 +86,21 @@ var
 inicio
 
 //Solicitando valor do capital inicial
-escreval ("DIGITE O VALOR DO CAPITAL (c): ")
+escreval ("Digite o valor do Capital (c): ")
       leia (capitalInicial)
 
       //Solicitando valor da taxa de juros
-      escreval ("DIGITE O VALOR DA TAXA DE JUROS (i): ")
+      escreval ("Digite o valor da Taxa de Juros (i): ")
       leia (taxaJuros)
       taxaJuros <- taxaJuros/100
 
       //Solicitando o periodo
-      escreval ("DIGITE A PERIODICIDADE (t): ")
+      escreval ("Digite a Periodicidade (t): ")
       leia (periodicidade)
       escreval ()
                limpatela
             juros <- capitalInicial * taxaJuros * periodicidade
-      escreval("O VALOR DO JUROS SIMPLES É: ", juros)
+      escreval("O valor do Juros Simples  é: ", juros)
 fimprocedimento
 
 //Procedimento Juros Composto
@@ -111,17 +111,18 @@ var
 
 inicio
 limpatela
-     escreval ("DIGITE O VALOR DO CAPITAL (c): ")
+     escreval ("Digite o valor do Capital (c): ")
      leia (capitalInicial)
 
      // Solicitação da taxa de juros
-     escreval ("DIGITE O VALOR DA TAXA DE JUROS (i): ")
+     escreval ("Digite o valor da Taxa de Juros (i): ")
      leia (taxaJuros)
      taxaJuros <- taxaJuros / 100
 
      // Solicitação do período
-     escreval ("DIGITE A PERIODICIDADE (t): ")
+     escreval ("Digite a Periodicidade (t): ")
      leia (periodicidade)
+     limpatela
 
      // Inicializa o montante com o valor do capital inicial
      montante <- capitalInicial
@@ -132,7 +133,7 @@ limpatela
      fimpara
 
      escreval()
-     escreval("VALOR DO MONTANTE: ", montante:10:2)
+     escreval("Valor do Montante: ", montante:10:2)
 fimprocedimento
 
 
@@ -140,11 +141,11 @@ procedimento equacao()
 var
 a, b, c, delta, x1, x2, raiz: real
 inicio
-    escreval("Digite o valor de a: ")
+    escreval("Digite o valor de (a): ")
    leia(a)
-   escreval("Digite o valor de b: ")
+   escreval("Digite o valor de (b): ")
    leia(b)
-   escreval("Digite o valor de c: ")
+   escreval("Digite o valor de (c): ")
    leia(c)
 
    // Calculando o discriminante (Delta)
@@ -446,13 +447,25 @@ Procedimento bases()
 var
    base: inteiro
 Inicio
-   escreval("Qual conversao deseja realizar:")
-   escreval("B10xB2 (01) | B2XB10 (02) | B2XB8 (03) | B8XB2 (04) | B2XB16 (05) | B16XB2 (06)")
+   escreval ("Qual conversão deseja realizar:")
+   escreval()
+   escreval ("[01] B10xB2")
+   escreval ("[02] B2XB10")
+   escreval ("[03] B2XB8")
+   escreval ("[04] B8XB2")
+   escreval ("[05] B2XB16")
+   escreval ("[06] B16XB2")
    leia(base)
    enquanto ((base < 1) ou (base > 6)) faca
       escreval ("Operação inválida! Tente novamente.")
-      escreval("Qual conversao deseja realizar:")
-      escreval("B10xB2 (01) | B2XB10 (02) | B2XB8 (03) | B8XB2 (04) | B2XB16 (05) | B16XB2 (06)")
+      escreval("Qual conversão deseja realizar:")
+      escreval()
+      escreval ("[01] B10xB2")
+      escreval ("[02] B2XB10")
+      escreval ("[03] B2XB8")
+      escreval ("[04] B8XB2")
+      escreval ("[05] B2XB16")
+      escreval ("[06] B16XB2")
       leia(base)
    fimenquanto
 
@@ -512,47 +525,90 @@ operacao <- 1
 //chamada-operações
 enquanto operacao <> 0 faca
    Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-   Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | JUROS COMPOSTO (07) | CONCATENAÇÃO DE PALAVRAS (08) | EQUACAO (09) | CONVERSAO DE BASES (10)| SAIR (0)")
+   Escreval()
+   Escreval ("[01] Soma")
+   Escreval ("[02] Subtração")
+   Escreval ("[03] Multiplicação")
+   Escreval ("[04] Divisão")
+   Escreval ("[05] Fatorial")
+   Escreval ("[06] Juros Simples")
+   Escreval ("[07] Juros Composto")
+   Escreval ("[08] Concataneção de Caracateres")
+   Escreval ("[09] Equação")
+   Escreval ("[10] Conversão de Bases")
+   Escreval ("[ 0] SAIR")
    leia(operacao)
+   limpatela
    //validação-operação válida
    enquanto ((operacao <0) ou (operacao > 10)) faca
       escreval ("Operação inválida! Tente novamente.")
       Escreval ("Digite a operação que deseja dentre as listadas abaixo: ")
-      Escreval ("SOMA (01) | SUBTRAÇÃO (02) | MULTIPLICAÇÃO (03) | DIVISÃO (04) | FATORIAL (05) | JUROS SIMPLES (06) | JUROS COMPOSTO (07) | CONCATENAÇÃO DE PALAVRAS (08) | EQUACAO (09) | CONVERSAO DE BASES (10) | SAIR (0)")
+      Escreval()
+      Escreval ("[01] Soma")
+      Escreval ("[02] Subtração")
+      Escreval ("[03] Multiplicação")
+      Escreval ("[04] Divisão")
+      Escreval ("[05] Fatorial")
+      Escreval ("[06] Juros Simples")
+      Escreval ("[07] Juros Composto")
+      Escreval ("[08] Concataneção de Caracateres")
+      Escreval ("[09] Equação")
+      Escreval ("[10] Conversão de Bases")
+      Escreval ("[ 0] SAIR")
       leia (operacao)
    fimenquanto
 se (operacao = 1) entao
+   Escreval ("[ SOMA ]")
+   Escreval()
    lerOperacoesBasicas()
    somar()
 senao
    se (operacao = 2) entao
+         Escreval ("[ SUBTRAÇÃO ]")
+         Escreval()
       lerOperacoesBasicas()
       subtrair()
    senao
       se (operacao = 3) entao
+            Escreval ("[ MULTIPLICAÇÃO ]")
+            Escreval()
          lerOperacoesBasicas()
          multiplicar()
       senao
          se (operacao = 4) entao
+            Escreval ("[ DIVISÃO ]")
+            Escreval()
             lerOperacoesBasicas()
             dividir()
          senao
             se (operacao = 5) entao
+               Escreval ("[ FATORIAL ]")
+               Escreval()
                calculo_fatorial()
             senao
                se (operacao = 6) entao
+                  Escreval ("[ JUROS SIMPLES ]")
+                  Escreval()
                   jurosSimples()
                senao
                   se (operacao = 7) entao
+                     Escreval ("[ JUROS COMPOSTO ]")
+                     Escreval()
                      jurosComposto()
                   senao
                      se (operacao = 8) entao
+                        Escreval ("[ CONCATENAÇÃO DE CARACTERES ]")
+                        Escreval()
                         concatenacaoString()
                      senao
                         se (operacao = 9) entao
+                           Escreval ("[ EQUAÇÃO ]")
+                           Escreval()
                            equacao()
                         senao
                            se (operacao = 10) entao
+                              Escreval ("[ CONVERSÃO DE BASES ]")
+                              Escreval()
                                bases()
                            fimse
                         fimse
